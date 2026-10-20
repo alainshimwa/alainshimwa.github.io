@@ -265,6 +265,19 @@ h2 {
 .decisions dt { font-weight: 600; }
 .decisions dd { max-width: 60ch; margin: 2px 0 0; color: var(--dim); }
 .text-link { justify-self: start; font-weight: 600; }
+.demo {
+  display: grid;
+  gap: 14px;
+  justify-items: start;
+  padding: 16px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--raised);
+}
+.demo-logins { display: flex; flex-wrap: wrap; gap: 10px 32px; margin: 0; }
+.demo-logins div { min-width: 0; }
+.demo-logins dt { color: var(--dim); font-size: 0.8rem; }
+.demo-logins dd { margin: 0; font-weight: 500; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
 
 /* Diagram panels */
 .figure {
@@ -500,10 +513,19 @@ h2 {
           <p class="tagline">Short for Your Parent Is Aging. A care app that keeps a family in the loop as a parent gets older.</p>
           <dl class="meta">
             <div><dt>Year</dt><dd>2026, TigerHacks</dd></div>
-            <div><dt>Team</dt><dd>3 people</dd></div>
+            <div><dt>Team</dt><dd>4 people</dd></div>
+            <div><dt>Awards</dt><dd>2, including Best Domain Name</dd></div>
             <div><dt>Built with</dt><dd>Python, Flask, TypeScript, Express, PostgreSQL, Gemini, ElevenLabs</dd></div>
           </dl>
-          <p>Built with a team of three at TigerHacks 2026. The parent gets a simple, voice-friendly app with reminders and daily activities. The family gets a dashboard with check-in streaks, mood alerts, a shared calendar, and a weekly summary written by Gemini.</p>
+          <p>Built with a team of four at TigerHacks 2026, where it won two awards. The parent gets a simple, voice-friendly app with reminders and daily activities. The family gets a dashboard with check-in streaks, mood alerts, a shared calendar, and a weekly summary written by Gemini.</p>
+          <div class="demo">
+            <a class="btn btn-primary" href="https://yourparentsareaging.duckdns.org" target="_blank" rel="noopener">Try the live demo</a>
+            <dl class="demo-logins">
+              <div><dt>Parent view</dt><dd>parent@gmail.com</dd></div>
+              <div><dt>Family view</dt><dd>child@gmail.com</dd></div>
+              <div><dt>Password for both</dt><dd>12345678</dd></div>
+            </dl>
+          </div>
           </div>
           <div class="project-details">
           <h4>Decisions</h4>
