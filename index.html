@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alain Shimwa – Software Developer</title>
+<meta name="description" content="Alain Shimwa studies computer science at the University of Indianapolis and loves turning ideas into software people use. Graduating May 2027 and looking for a full-time software engineering role.">
+<link rel="canonical" href="https://alainshimwa.github.io/">
+<meta name="theme-color" content="#1c1a24">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alainshimwa.github.io/">
+<meta property="og:title" content="Alain Shimwa – Software Developer">
+<meta property="og:description" content="Computer science senior at the University of Indianapolis. Projects, experience, and résumé.">
+<meta property="og:image" content="https://alainshimwa.github.io/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Alain Shimwa outdoors at dusk">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1a24'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial Narrow,Arial,Helvetica,sans-serif' font-weight='700' font-size='30' fill='%23e9b5c8'%3EAS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:ital,wght@0,400..700;1,400..700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alain Shimwa",
+  "url": "https://alainshimwa.github.io/",
+  "image": "https://alainshimwa.github.io/assets/alain-shimwa.jpg",
+  "jobTitle": "Software Developer",
+  "affiliation": { "@type": "CollegeOrUniversity", "name": "University of Indianapolis" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Indianapolis", "addressRegion": "IN", "addressCountry": "US" },
+  "knowsLanguage": ["English", "French", "Kinyarwanda", "Kirundi"],
+  "sameAs": ["https://www.linkedin.com/in/alain-shimwa", "https://github.com/alainshimwa"]
+}
+</script>
+<style>
+/* Layout: a left-aligned column. A name-and-portrait hero, then each project as text beside a diagram of how it works,
+   then experience, about, and contact. One committed dark look taken from the portrait: suit charcoal, shirt white, dusk rose. */
+:root {
+  color-scheme: dark;
+  --bg: #1c1a24;      /* dusk charcoal, the suit at evening */
+  --raised: #252230;  /* diagram panels */
+  --rule: #38343f;    /* dividers and outlines */
+  --fg: #f4f0f1;      /* shirt white */
+  --dim: #b2aab5;     /* secondary text and labels */
+  --rose: #e9b5c8;    /* the sky behind the portrait; marks where a person decides, and the main action */
+
+  --font-display: "Bricolage Grotesque", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: var(--bg);
+}
+img { display: block; max-width: 100%; height: auto; }
+[hidden] { display: none !important; }
+p { margin: 0; }
+h1, h2, h3, h4 { text-wrap: balance; }
+p, li, dd { text-wrap: pretty; }
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.22em; text-decoration-color: color-mix(in oklab, var(--rose) 65%, transparent); }
+a:hover { color: var(--rose); }
+:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; border-radius: 4px; }
+
+section[id], article[id] { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 76px); }
+
+.wrap {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 720px) {
+  .wrap {
+    padding-left: max(40px, env(safe-area-inset-left, 0px));
+    padding-right: max(40px, env(safe-area-inset-right, 0px));
+  }
+}
+
+.skip {
+  position: absolute;
+  left: max(16px, env(safe-area-inset-left, 0px));
+  top: -80px;
+  z-index: 50;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: var(--rose);
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + 12px); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s, color 0.15s;
+}
+.btn:hover { border-color: var(--rose); color: var(--fg); }
+.btn-primary { background: var(--rose); border-color: var(--rose); color: var(--bg); }
+.btn-primary:hover {
+  background: color-mix(in oklab, var(--rose) 80%, var(--fg));
+  border-color: color-mix(in oklab, var(--rose) 80%, var(--fg));
+  color: var(--bg);
+}
+.btn-small { min-height: 36px; padding: 6px 14px; font-size: 0.9rem; }
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  background: color-mix(in oklab, var(--bg) 86%, transparent);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  backdrop-filter: saturate(140%) blur(12px);
+  border-bottom: 1px solid var(--rule);
+}
+.header-inner { display: flex; align-items: center; gap: 28px; min-height: 64px; }
+.wordmark {
+  margin-right: auto;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-stretch: 85%;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 28px; margin: 0; padding: 0; list-style: none; font-size: 0.95rem; }
+.nav-links a { color: var(--dim); text-decoration: none; }
+.nav-links a:hover { color: var(--fg); }
+@media (max-width: 760px) { .site-header nav { display: none; } }
+
+/* Hero */
+.hero { padding-block: clamp(32px, 5vw, 72px) clamp(48px, 6vw, 80px); }
+.hero-grid { display: grid; gap: clamp(28px, 5vw, 72px); align-items: center; }
+@media (min-width: 880px) { .hero-grid { grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.9fr); } }
+.name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 750;
+  font-stretch: 78%;
+  font-size: clamp(4rem, 3rem + 7vw, 9rem);
+  line-height: 0.86;
+  letter-spacing: -0.025em;
+}
+.name span { display: block; }
+.greeting {
+  margin-bottom: 14px;
+  color: var(--rose);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-stretch: 90%;
+  font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.75rem);
+  line-height: 1.2;
+}
+.lead {
+  max-width: 34ch;
+  margin-top: 28px;
+  font-size: clamp(1.2rem, 1.02rem + 0.75vw, 1.55rem);
+  line-height: 1.4;
+}
+.bio { display: grid; gap: 14px; max-width: 56ch; margin-top: 18px; color: var(--dim); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+@media (max-width: 479px) { .actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.portrait { margin: 0; }
+.portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px; }
+@media (max-width: 879px) {
+  .portrait { order: -1; max-width: 520px; }
+  .portrait img { aspect-ratio: 1 / 1; object-position: 50% 28%; }
+}
+
+/* Sections */
+.section { padding-block: clamp(56px, 7vw, 96px); border-top: 1px solid var(--rule); }
+h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-stretch: 85%;
+  font-size: clamp(2.25rem, 1.6rem + 2.6vw, 3.75rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.section-head { display: grid; gap: 10px; margin-bottom: clamp(16px, 3vw, 32px); }
+.section-head p { color: var(--dim); font-size: 1.125rem; }
+
+/* Projects */
+.project { display: grid; gap: clamp(28px, 4vw, 56px); padding-block: clamp(28px, 4vw, 48px); }
+.project + .project { border-top: 1px solid var(--rule); }
+.project:last-of-type { padding-bottom: 0; }
+.project-text, .project-intro, .project-details { display: grid; gap: 18px; min-width: 0; }
+.project-text { gap: 28px; }
+@media (min-width: 960px) { .project { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); align-items: start; } }
+/* On narrower screens the diagram sits between a project's summary and its details */
+@media (max-width: 959px) {
+  .project-text { display: contents; }
+  .project-details { order: 1; }
+}
+.project h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-stretch: 85%;
+  font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+.tagline { margin-top: -6px; font-size: 1.25rem; line-height: 1.4; }
+.project-intro > p, .project-details > p { max-width: 62ch; }
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 36px;
+  margin: 0;
+  padding-block: 14px;
+  border-block: 1px solid var(--rule);
+}
+.meta div { min-width: 0; }
+.meta dt { color: var(--dim); font-size: 0.8rem; }
+.meta dd { margin: 0; font-size: 0.95rem; font-weight: 500; }
+.project h4 {
+  margin: 0 0 -4px;
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-stretch: 90%;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+.project-details h4:not(:first-child) { margin-top: 14px; }
+.decisions { display: grid; gap: 16px; margin: 0; }
+.decisions dt { font-weight: 600; }
+.decisions dd { max-width: 60ch; margin: 2px 0 0; color: var(--dim); }
+.text-link { justify-self: start; font-weight: 600; }
+
+/* Diagram panels */
+.figure {
+  margin: 0;
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--raised);
+  min-width: 0;
+}
+@media (min-width: 960px) { .figure { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 88px); } }
+.figure figcaption {
+  margin-bottom: 18px;
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-stretch: 90%;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+/* Kairsh: the send pipeline */
+.flow ol { position: relative; display: grid; margin: 0; padding: 0; list-style: none; }
+.flow ol::before {
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: 26px;
+  bottom: 26px;
+  border-left: 1px solid var(--rule);
+}
+.flow li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 14px;
+  padding: 10px 10px 10px 8px;
+  border-radius: 8px;
+}
+.flow .n {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--raised);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.flow li p { padding-top: 4px; color: var(--dim); font-size: 0.95rem; line-height: 1.45; }
+.flow li strong { display: block; color: var(--fg); font-weight: 600; }
+.flow li.is-human { background: color-mix(in oklab, var(--rose) 13%, transparent); }
+.flow li.is-human .n { background: var(--rose); border-color: var(--rose); color: var(--bg); }
+
+/* Y.P.I.A.: two apps on one database */
+.map-apps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.app, .map-db { border: 1px solid var(--rule); border-radius: 8px; padding: 14px; background: var(--bg); min-width: 0; }
+.app { position: relative; }
+.app::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  height: 21px;
+  border-left: 1px dashed var(--dim);
+}
+.app-name { margin-bottom: 8px; font-size: 0.95rem; font-weight: 600; line-height: 1.3; }
+.app ul { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; color: var(--dim); font-size: 0.9rem; line-height: 1.35; }
+.map-db { margin-top: 20px; }
+.map-db p:last-child { color: var(--dim); font-size: 0.9rem; line-height: 1.4; }
+
+/* Experience */
+.entry { display: grid; gap: 12px 48px; padding-block: 28px; border-top: 1px solid var(--rule); }
+.entry:first-of-type { border-top: 0; }
+@media (min-width: 860px) { .entry { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); } }
+.entry h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-stretch: 88%;
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+.entry-role { margin-top: 6px; font-weight: 500; }
+.entry-when { color: var(--dim); font-size: 0.95rem; font-variant-numeric: tabular-nums; }
+.entry-body { display: grid; gap: 12px; min-width: 0; }
+.entry-body p, .entry-body ul { max-width: 64ch; }
+.entry-body ul { display: grid; gap: 10px; margin: 0; padding-left: 1.1em; }
+.entry-body li::marker { color: var(--rose); }
+.entry-about { color: var(--dim); }
+
+/* Skills, the last entry in the experience section */
+.skills { gap: 20px; }
+.skills h4 { margin: 0 0 4px; color: var(--dim); font-family: var(--font-body); font-size: 0.9rem; font-weight: 600; }
+
+/* Contact */
+.contact .wrap { display: grid; gap: 18px; }
+.contact-note { color: var(--dim); font-size: 1.125rem; }
+.email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 12px; }
+.email {
+  min-width: 0;
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-stretch: 85%;
+  font-size: clamp(1.6rem, 1.1rem + 2.4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.copy-status { min-height: 1.5em; color: var(--rose); font-size: 0.95rem; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin: 14px 0 0; padding: 0; list-style: none; font-weight: 600; }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--rule); }
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-block: 28px;
+  color: var(--dim);
+  font-size: 0.9rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="#top">Alain Shimwa</a>
+    <nav aria-label="Sections">
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-small" href="assets/Alain_Shimwa_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-label="Introduction">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="greeting">Hi there, I’m</p>
+        <h1 class="name"><span>Alain</span> <span>Shimwa</span></h1>
+        <p class="lead">I study computer science, and I love turning ideas into software that people actually use.</p>
+        <div class="bio">
+          <p>I graduate from the University of Indianapolis in May 2027, and I’m looking for my first full-time software engineering role. I want to join a team where I can learn fast, take on real problems, and grow into an engineer people can count on.</p>
+          <p>I speak English, French, Kinyarwanda, and Kirundi. Away from the keyboard, you’ll find me on the soccer field, at the gym, or tracking down a really good cookie.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="assets/Alain_Shimwa_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+          <a class="btn" href="#contact">Email me</a>
+          <a class="btn" href="https://github.com/alainshimwa" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/alain-shimwa" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <img src="assets/alain-shimwa.jpg" width="960" height="1200" alt="Alain Shimwa in a black suit and white shirt, outdoors at dusk" fetchpriority="high">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="projects" aria-labelledby="projects-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="projects-title">Projects</h2>
+        <p>Recent work, and the decisions behind it.</p>
+      </div>
+
+      <!-- To add a project: copy a whole <article class="project"> block, paste it below the last one, and edit the text. -->
+
+      <article class="project" id="kairsh" aria-labelledby="kairsh-title">
+        <div class="project-text">
+          <div class="project-intro">
+          <h3 id="kairsh-title">Kairsh</h3>
+          <p class="tagline">An AI copilot for customer messaging.</p>
+          <dl class="meta">
+            <div><dt>Year</dt><dd>2026</dd></div>
+            <div><dt>Team</dt><dd>Solo</dd></div>
+            <div><dt>Built with</dt><dd>JavaScript, HTML, CSS</dd></div>
+          </dl>
+          <p>Kairsh puts every customer conversation in one inbox. AI drafts replies, scores leads, and schedules follow-ups, so owners get more control of their business.</p>
+          </div>
+          <div class="project-details">
+          <h4>Decisions</h4>
+          <dl class="decisions">
+            <div>
+              <dt>AI flags, rules decide.</dt>
+              <dd>AI reads tone and spots sensitive topics. Fixed rules use those flags to decide what sends, and the per-minute send limit never depends on a model.</dd>
+            </div>
+            <div>
+              <dt>Prices expire.</dt>
+              <dd>Kairsh only quotes prices the owner has confirmed, and each confirmation expires after a set period. A menu parser can suggest prices but can’t set them.</dd>
+            </div>
+            <div>
+              <dt>Each business defines a hot lead.</dt>
+              <dd>At setup, AI suggests what a hot lead means for that industry, and the owner adjusts it. Someone asking to book is hot. Someone who just bought usually isn’t.</dd>
+            </div>
+          </dl>
+          </div>
+        </div>
+        <figure class="figure flow">
+          <figcaption>How a reply gets sent</figcaption>
+          <ol>
+            <li><span class="n" aria-hidden="true">1</span><p><strong>A customer texts the business</strong></p></li>
+            <li><span class="n" aria-hidden="true">2</span><p><strong>AI drafts a reply</strong> using the business’s knowledge base and confirmed prices</p></li>
+            <li><span class="n" aria-hidden="true">3</span><p><strong>AI flags the message</strong> if it reads as angry or sensitive</p></li>
+            <li><span class="n" aria-hidden="true">4</span><p><strong>Rules decide what happens next</strong> and enforce the send limits</p></li>
+            <li class="is-human"><span class="n" aria-hidden="true">5</span><p><strong>The owner approves</strong> anything the rules hold back</p></li>
+            <li><span class="n" aria-hidden="true">6</span><p><strong>The reply goes out</strong></p></li>
+          </ol>
+        </figure>
+      </article>
+
+      <article class="project" id="ypia" aria-labelledby="ypia-title">
+        <div class="project-text">
+          <div class="project-intro">
+          <h3 id="ypia-title">Y.P.I.A.</h3>
+          <p class="tagline">Short for Your Parent Is Aging. A care app that keeps a family in the loop as a parent gets older.</p>
+          <dl class="meta">
+            <div><dt>Year</dt><dd>2026, TigerHacks</dd></div>
+            <div><dt>Team</dt><dd>3 people</dd></div>
+            <div><dt>Built with</dt><dd>Python, Flask, TypeScript, Express, PostgreSQL, Gemini, ElevenLabs</dd></div>
+          </dl>
+          <p>Built with a team of three at TigerHacks 2026. The parent gets a simple, voice-friendly app with reminders and daily activities. The family gets a dashboard with check-in streaks, mood alerts, a shared calendar, and a weekly summary written by Gemini.</p>
+          </div>
+          <div class="project-details">
+          <h4>Decisions</h4>
+          <dl class="decisions">
+            <div>
+              <dt>No location tracking.</dt>
+              <dd>The family can see how a parent is doing without tracking where they are.</dd>
+            </div>
+            <div>
+              <dt>Large text, voice, few steps.</dt>
+              <dd>The parent’s side uses large text and voice input, and keeps every task to as few steps as possible.</dd>
+            </div>
+            <div>
+              <dt>AI suggests, a person confirms.</dt>
+              <dd>When Gemini pulls medications and appointments out of an uploaded document, a person confirms them before anything is saved.</dd>
+            </div>
+          </dl>
+          <a class="text-link" href="https://github.com/ttttoyahh/Tigerhacks2026" target="_blank" rel="noopener">View the code on GitHub</a>
+          </div>
+        </div>
+        <figure class="figure map">
+          <figcaption>Two apps, one database</figcaption>
+          <div class="map-apps">
+            <div class="app">
+              <p class="app-name">The parent’s app</p>
+              <ul>
+                <li>Large text and voice</li>
+                <li>Schedule and medication reminders</li>
+                <li>Activities: Gemini trivia, Sudoku, Solitaire</li>
+              </ul>
+            </div>
+            <div class="app">
+              <p class="app-name">The family’s dashboard</p>
+              <ul>
+                <li>Check-in streak</li>
+                <li>Mood alerts</li>
+                <li>Shared calendar</li>
+                <li>Weekly summary from Gemini</li>
+              </ul>
+            </div>
+          </div>
+          <div class="map-db">
+            <p class="app-name">PostgreSQL</p>
+            <p>Medications, appointments, check-ins, and approved family members</p>
+          </div>
+        </figure>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="experience" aria-labelledby="experience-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="experience-title">Experience and education</h2>
+      </div>
+
+      <article class="entry">
+        <div>
+          <h3>Weave Filtration</h3>
+          <p class="entry-role">Tech intern</p>
+          <p class="entry-when">Summer 2026</p>
+        </div>
+        <div class="entry-body">
+          <p class="entry-about">A small manufacturer of custom filter cloths for industrial filter presses.</p>
+          <ul>
+            <li>Built a prototype shipping tool on the Priority1 freight API that gets rate quotes, books shipments, and prints labels, designed to replace a fully manual process.</li>
+            <li>Helped build the company’s current website.</li>
+            <li>Helped organize the company’s database.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div>
+          <h3>University of Indianapolis</h3>
+          <p class="entry-role">B.S. Computer Science</p>
+          <p class="entry-when">Expected May 2027</p>
+        </div>
+        <div class="entry-body">
+          <p>Minors in data science, mathematics, and applied analytics.</p>
+          <p class="entry-about">Senior-year coursework includes Operating Systems, Computer Networks, and the Senior Design capstone.</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div>
+          <h3>Skills</h3>
+        </div>
+        <div class="entry-body skills">
+          <div>
+            <h4>Programming languages</h4>
+            <p>Python, JavaScript, TypeScript, C, C++, SQL, HTML, CSS</p>
+          </div>
+          <div>
+            <h4>Tools and platforms</h4>
+            <p>Git, Docker, AWS, Flask, PostgreSQL, KNIME, Tableau</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 id="contact-title">Hiring a new grad for 2027?</h2>
+      <p class="contact-note">Email is the fastest way to reach me.</p>
+      <div class="email-row">
+        <a class="email" id="email-address" href="mailto:ssshimwaalain@gmail.com">ssshimwaalain@gmail.com</a>
+        <button class="btn" type="button" id="copy-email" data-copy="ssshimwaalain@gmail.com">Copy email</button>
+        <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+      </div>
+      <ul class="contact-links">
+        <li><a href="https://www.linkedin.com/in/alain-shimwa" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/alainshimwa" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="assets/Alain_Shimwa_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>© <span id="year">2026</span> Alain Shimwa</p>
+    <p>Plain HTML and CSS, no frameworks.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var year = document.getElementById("year");
+  if (year) year.textContent = String(new Date().getFullYear());
+
+  var button = document.getElementById("copy-email");
+  var status = document.getElementById("copy-status");
+  var address = document.getElementById("email-address");
+  if (!button || !status || !address) return;
+
+  var timer;
+  function show(message) {
+    status.textContent = message;
+    clearTimeout(timer);
+    timer = setTimeout(function () { status.textContent = ""; }, 3000);
+  }
+  function selectAddress() {
+    var range = document.createRange();
+    range.selectNodeContents(address);
+    var selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    show("Selected. Press Ctrl+C or ⌘C to copy.");
+  }
+
+  button.addEventListener("click", function () {
+    var text = button.getAttribute("data-copy");
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { show("Copied"); }, selectAddress);
+    } else {
+      selectAddress();
+    }
+  });
+})();
+</script>
+</body>
+</html>
